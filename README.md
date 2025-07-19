@@ -167,7 +167,7 @@ We formulated this as a multiclass supervised classification problem, leveraging
 ---
 
 ###  Overall Insights:
-- **ResNet50 and EfficientNetB0 consistently delivered top-tier ROC scores across most classes**, making them better suited for high-accuracy scenarios.
+- **ResNet50 and EfficientNetB0 consistently delivered top-tier ROC scores across most classes**, making them better suited for high accuracy scenarios.
 - **MobileNetV2, while lighter, showed slightly lower AUCs**, reflecting its trade-off between model complexity and classification strength.
 - All three models demonstrated strong performance, but **ResNet50 edges slightly ahead in multiclass discrimination**.
 - ROC curves confirm the ranking observed from accuracy and confusion matrix evaluations.
@@ -200,7 +200,7 @@ We formulated this as a multiclass supervised classification problem, leveraging
 
 ###  Misclassifications Observed:
 - **Potato___Late_blight** misclassified as **Tomato__Tomato_mosaic_virus** — Suggests overlapping visual features or lack of class-specific training examples.
-- **Pepper__bell___Bacterial_spot** misclassified as **Potato___Late_blight** — Indicates cross-confusion between bacterial and blight-like symptoms.
+- **Pepper__bell___Bacterial_spot** misclassified as **Potato___Late_blight** — Indicates cross confusion between bacterial and blight like symptoms.
 - **Tomato_Late_blight** predicted as **Tomato_Early_blight** — Common pattern, as seen in confusion matrix and ROC analysis.
 
 ###  Visual Insights:
@@ -254,13 +254,23 @@ pip install -r requirements.txt
 
 ## Overview of Repository Files
 
-* `data_loader.py` — Loads datasets for training and evaluation.
-* `Train_EfficientNetB0.ipynb` — Train EfficientNetB0 model.
-* `Train_ResNet50.ipynb` — Train ResNet50 model.
-* `Train_MobileNetV2.ipynb` — Train MobileNetV2 model.
-* `Data_Augmentation.ipynb` — Experiments with augmented data.
-* `Model_Evaluation.ipynb` — Analyze metrics and visualize results.
-* `predict_single_image.py` — Predict disease on a single input image.
+- **Data_louder (1).ipynb**  Loads and prepares the dataset for training and validation.
+
+- **TrainBaseMode.ipynb** Trains the baseline EfficientNetB0 model without data augmentation.
+
+- **TrainBaseModelAugmentation.ipynb** Trains the EfficientNetB0 model with data augmentation applied.
+
+- **Train_ResNet50.ipynb** Implements and trains the ResNet50 model using transfer learning.
+
+- **Train_MobileNet.ipynb** Implements and trains the MobileNetV2 model using transfer learning.
+
+- **CompareAugmentation.ipynb**  Compares model performance with and without data augmentation using ROC curves and confusion matrices.
+
+- **CompareModels (1).ipynb**  Compares ResNet50, EfficientNetB0, and MobileNetV2 models side by side based on metrics and ROC analysis.
+
+- **Qualitative_Analysis_-_Sample_Predictions.ipynb** Tests the trained models on individual samples and visualizes predictions.
+
+- **README.md** Project documentation and instructions.
 
 ---
 
