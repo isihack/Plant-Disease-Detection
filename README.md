@@ -186,29 +186,7 @@ We formulated this as a multiclass supervised classification problem, leveraging
 - Data augmentation improved overall performance and helped mitigate overfitting, especially on EfficientNetB0.
 
 
----
 
-## Sample Predictions Analysis – Visual Inspection of Model Output
-
-
-<img width="1182" height="1218" alt="download" src="https://github.com/user-attachments/assets/21d76cd7-e53a-483f-8a2b-ae0e290401af" />
-
-
-###  Correct Predictions:
-- **Pepper__bell___Bacterial_spot**, **Tomato_Bacterial_spot**, and **Tomato_healthy** were correctly classified.
-- The model confidently detects healthy leaves and some distinct bacterial spot patterns.
-
-###  Misclassifications Observed:
-- **Potato___Late_blight** misclassified as **Tomato__Tomato_mosaic_virus** — Suggests overlapping visual features or lack of class-specific training examples.
-- **Pepper__bell___Bacterial_spot** misclassified as **Potato___Late_blight** — Indicates cross confusion between bacterial and blight like symptoms.
-- **Tomato_Late_blight** predicted as **Tomato_Early_blight** — Common pattern, as seen in confusion matrix and ROC analysis.
-
-###  Visual Insights:
-- Many disease symptoms present subtle differences in color, texture, or pattern — making it challenging even for human experts.
-- The correct classifications show the model performs well when leaf features are clear and distinct.
-- Misclassifications seem to happen on visually ambiguous or borderline cases.
-
----
 
 ##  Future Work:
 - **Fine-tune pre-trained layers** (unfreeze and retrain) to improve feature extraction on disease-specific patterns.
