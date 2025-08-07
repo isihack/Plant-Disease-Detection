@@ -92,7 +92,7 @@ We framed the task as a multiclass image classification problem. Using transfer 
 - Model with Data Augmentation
 <img width="1288" height="701" alt="download" src="https://github.com/user-attachments/assets/c5ba5320-62a8-44c2-be27-0e8dfc9b2c26" />
 
-##  ROC Curve Comparison — Observations
+##  ROC Curve Comparison Observations
 
 -  **Perfect Classification for Disease Classes (AUC = 1.00)**  
   Both the **Base Model** and **Augmented Model** achieved near-perfect ROC curves for:
@@ -120,7 +120,7 @@ We framed the task as a multiclass image classification problem. Using transfer 
 
 ###  **Conclusion**
 - The model exhibits **strong discriminative ability** for disease detection.
-- **Healthy class detection** shows minor performance lag — could benefit from further analysis or targeted augmentation.
+- **Healthy class detection** shows minor performance lag could benefit from further analysis or targeted augmentation.
 - **Data Augmentation** strategy proved effective and reliable across all tested classes.
 
 
@@ -140,7 +140,7 @@ We framed the task as a multiclass image classification problem. Using transfer 
 
 <img width="1173" height="790" alt="download" src="https://github.com/user-attachments/assets/add5c4e3-8135-42a7-bde7-bab91f7fb13d" />
 
-##  ROC Curve Comparison Observations – EfficientNetB0 vs ResNet50 vs MobileNetV2
+##  ROC Curve Comparison Observations EfficientNetB0 vs ResNet50 vs MobileNetV2
 
 ###  EfficientNetB0:
 - Achieved **AUC = 1.00** for most classes (perfect classification on key diseases).
@@ -173,7 +173,7 @@ We framed the task as a multiclass image classification problem. Using transfer 
 - Transfer learning with pre-trained models like **ResNet50**, **EfficientNetB0**, and **MobileNetV2** proved effective for plant disease classification on the PlantVillage subset.
 - **ResNet50 consistently achieved the highest validation accuracy (95%) and superior AUC scores**, making it the most reliable model among those tested.
 - **EfficientNetB0** performed nearly as well, showing strong generalization with slightly lower complexity.
-- **MobileNetV2**, while lightweight, underperformed slightly in both accuracy and ROC-AUC, but remains a viable option for resource-constrained environments.
+- **MobileNetV2**, while lightweight, underperformed slightly in both accuracy and ROC-AUC, but remains a viable option for resource constrained environments.
 - Evaluation metrics and visual analysis confirmed that the models sometimes confuse diseases with similar visual symptoms (e.g., blight categories).
 - Data augmentation improved overall performance and helped mitigate overfitting, especially on EfficientNetB0.
 
