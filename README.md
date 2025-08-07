@@ -5,29 +5,28 @@
 
 This repository applies supervised deep learning models ResNet50, EfficientNetB0, and MobileNetV2 to classify plant leaf diseases using the [PlantVillage Dataset](https://www.kaggle.com/datasets/emmarex/plantdisease).
 
----
+
 
 # Overview
-Task Definition
-Classify RGB images of plant leaves into 8 disease categories based on visual symptoms using image classification models.
-
-Early detection of plant diseases is critical for sustainable agriculture and food security.  
-This project tackles the challenge of classifying plant leaf images into disease categories using modern deep learning techniques.  
-Our goal is to build a reliable image classifier that can assist farmers and researchers in identifying plant diseases based on leaf images
+This project presents a deep learning-based approach to plant disease classification using transfer learning with pre-trained convolutional neural networks. Using the PlantVillage dataset, we trained and evaluated three models ResNet50, EfficientNetB0, and MobileNetV2  to classify plant leaf images into eight disease categories. The task was formulated as a multiclass classification problem, and both original and augmented datasets were used to enhance generalization. Among the models, ResNet50 achieved the best performance with a 95% validation accuracy and a macro F1-score of 0.94, making it highly suitable for accuracy-critical applications. EfficientNetB0 followed with 90% accuracy, offering a strong balance between speed and precision. MobileNetV2, designed for lightweight deployment, reached 78% accuracy and is a good candidate for resource-constrained environments like mobile devices. We used accuracy curves, confusion matrices, and ROC curve analysis for detailed evaluation. The project is structured in modular notebooks for training, evaluation, comparison, and individual image inference, making it reproducible and extensible for future research or deployment in agricultural diagnostics.
 
 # Approach
-We formulated this as a multiclass supervised classification problem, leveraging transfer learning with pre trained CNNs. We compared three architectures — ResNet50, EfficientNetB0, and MobileNetV2  and applied data augmentation to improve generalization.
+We framed the task as a multiclass image classification problem. Using transfer learning, we fine-tuned three CNN architectures (ResNet50, EfficientNetB0, MobileNetV2). Data augmentation techniques were applied to improve model generalization and reduce overfitting.
 
 # Performance Summary
+
+| Model          | Validation Accuracy | Macro F1-Score |
+| -------------- | ------------------- | -------------- |
+| ResNet50       | 95%                 | 0.94           |
+| EfficientNetB0 | 90%                 | 0.89           |
+| MobileNetV2    | 78%                 | 0.76           |
+
 **ResNet50** achieved 95% validation accuracy with strong ROC-AUC scores.
 
 **EfficientNetB0** reached 90% validation accuracy.
 
 **MobileNetV2 performed** at 78% validation accuracy, suitable for mobile deployment.
 
-
-
----
 
 ## Summary of Work Done
 
@@ -44,7 +43,7 @@ We formulated this as a multiclass supervised classification problem, leveraging
 
 * <img width="807" height="812" alt="download" src="https://github.com/user-attachments/assets/ffecf96c-3101-4c0b-8718-5e0f9de93ee0" />
 
----
+
 
 ## Problem Formulation
 
@@ -66,7 +65,7 @@ We formulated this as a multiclass supervised classification problem, leveraging
 * **Epochs:** 30
 * **Batch Size:** Auto from tf.data pipelines
 
----
+
 
 ## Training
 
@@ -136,11 +135,6 @@ We formulated this as a multiclass supervised classification problem, leveraging
 
 
 
-| Model          | Validation Accuracy | Macro F1-Score |
-| -------------- | ------------------- | -------------- |
-| ResNet50       | 95%                 | 0.94           |
-| EfficientNetB0 | 90%                 | 0.89           |
-| MobileNetV2    | 78%                 | 0.76           |
 
 ### Visual Analysis
 
@@ -164,7 +158,7 @@ We formulated this as a multiclass supervised classification problem, leveraging
 - Lower AUCs observed particularly for **Potato___Late_blight (0.94)** and **Tomato_healthy (0.91)**.
 - Indicates some class-wise weaknesses compared to ResNet50 and EfficientNetB0.
 
----
+
 
 ###  Overall Insights:
 - **ResNet50 and EfficientNetB0 consistently delivered top-tier ROC scores across most classes**, making them better suited for high accuracy scenarios.
@@ -172,9 +166,7 @@ We formulated this as a multiclass supervised classification problem, leveraging
 - All three models demonstrated strong performance, but **ResNet50 edges slightly ahead in multiclass discrimination**.
 - ROC curves confirm the ranking observed from accuracy and confusion matrix evaluations.
 
----
 
----
 
 
 ## Conclusion:
@@ -196,7 +188,6 @@ We formulated this as a multiclass supervised classification problem, leveraging
 - **Deploy lightweight models like MobileNetV2** for mobile or edge devices with real-time inference.
 - Explore explainable AI (XAI) methods (e.g., Grad-CAM) to visualize what the model focuses on during prediction.
 
----
 
 ## How to Reproduce Results
 
@@ -228,7 +219,6 @@ pip install -r requirements.txt
 
 * Use `Model_Evaluation.ipynb` for confusion matrices, ROC, and classification reports.
 
----
 
 ## Overview of Repository Files
 
@@ -250,7 +240,6 @@ pip install -r requirements.txt
 
 - **README.md** Project documentation and instructions.
 
----
 
 ## Software Setup
 
@@ -259,20 +248,18 @@ pip install -r requirements.txt
 * scikit-learn
 * Matplotlib, NumPy
 
----
 
 ## Data Source
 
 * [PlantVillage Dataset (Kaggle)](https://www.kaggle.com/datasets/emmarex/plantdisease)
 
----
 
 ## How to Train & Evaluate
 
 * Run training notebooks sequentially.
 * Evaluate using provided evaluation notebook.
 
----
+
 
 ## References
 
